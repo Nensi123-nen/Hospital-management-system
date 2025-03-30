@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Check-in</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Container Styles */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header Styles */
+        h2 {
+            color: #007bb5;
+            font-size: 28px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #007bb5;
+            padding-bottom: 10px;
+        }
+        
+        /* Patient Card Styles */
+        .patient-card {
+            background-color: #fff;
+            border-left: 4px solid #007bb5;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .patient-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .patient-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bb5;
+            margin-bottom: 10px;
+        }
+        
+        .details {
+            font-size: 15px;
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .details strong {
+            color: #007bb5;
+            font-weight: normal;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+                width: auto;
+            }
+            
+            .patient-card {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Patient Check-in</h2>
+
+    <div class="patient-card">
+        <p class="patient-name">Ramesh Das</p>
+        <p class="details"><strong>Visit Date:</strong> 26-10-2022</p>
+        <p class="details"><strong>Doctor:</strong> Dr. Smith</p>
+        <p class="details"><strong>Reason:</strong> Annual checkup</p>
+        <p class="details"><strong>Diagnosis:</strong> Healthy, no issues found</p>
+    </div>
+
+    <div class="patient-card">
+        <p class="patient-name">Sunil Das</p>
+        <p class="details"><strong>Visit Date:</strong> 22-03-2023</p>
+        <p class="details"><strong>Doctor:</strong> Dr. Johnson</p>
+        <p class="details"><strong>Reason:</strong> Persistent headaches</p>
+        <p class="details"><strong>Diagnosis:</strong> Migraine, prescribed medication</p>
+    </div>
+
+    <div class="patient-card">
+        <p class="patient-name">Riya Das</p>
+        <p class="details"><strong>Visit Date:</strong> 15-06-2024</p>
+        <p class="details"><strong>Doctor:</strong> Dr. James</p>
+        <p class="details"><strong>Reason:</strong> Allergy symptoms</p>
+        <p class="details"><strong>Diagnosis:</strong> Seasonal allergies, antihistamines prescribed</p>
+    </div>
+
+</div>
+
+</body>
+</html>

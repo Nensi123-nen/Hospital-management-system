@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Medical History</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Container Styles */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header Styles */
+        h2 {
+            color: #007bb5;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bb5;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #007bb5;
+            font-size: 22px;
+            margin: 25px 0 15px 0;
+        }
+        
+        /* Patient Info Styles */
+        .patient-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bb5;
+        }
+        
+        .patient-info p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        
+        .patient-info strong {
+            color: #007bb5;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        
+        th {
+            background-color: #007bb5;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Patient Medical History</h2>
+    
+    <div class="patient-info">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Age:</strong> 35</p>
+        <p><strong>Patient ID:</strong> HMS-2024-001</p>
+        <p><strong>Last Visit:</strong> 15-01-2024</p>
+    </div>
+    
+    <h3>Medical Records</h3>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Condition</th>
+            <th>Treatment</th>
+            <th>Doctor</th>
+        </tr>
+        <tr>
+            <td>15-01-2024</td>
+            <td>Flu</td>
+            <td>Rest & Medication</td>
+            <td>Dr. Emily Davis</td>
+        </tr>
+        <tr>
+            <td>10-10-2023</td>
+            <td>High Blood Pressure</td>
+            <td>Diet & Medication</td>
+            <td>Dr. John Smith</td>
+        </tr>
+        <tr>
+            <td>20-06-2022</td>
+            <td>Fractured Arm</td>
+            <td>Cast & Therapy</td>
+            <td>Dr. Robert Wilson</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

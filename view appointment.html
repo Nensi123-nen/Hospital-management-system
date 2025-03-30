@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointments</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Container Styles */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header Styles */
+        h1 {
+            color: #007bb5;
+            font-size: 28px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #007bb5;
+            padding-bottom: 10px;
+        }
+        
+        /* Appointment Card Styles */
+        .appointment-card {
+            background-color: #fff;
+            border-left: 4px solid #007bb5;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .appointment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .patient-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bb5;
+        }
+        
+        .appointment-date {
+            background-color: #007bb5;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .appointment-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            font-size: 15px;
+        }
+        
+        .detail-item strong {
+            color: #007bb5;
+            font-weight: normal;
+            display: block;
+            margin-bottom: 3px;
+        }
+        
+        /* Status Badges */
+        .status-confirmed {
+            background-color: #4CAF50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .status-pending {
+            background-color: #FFC107;
+            color: #333;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 15px;
+            }
+            
+            .appointment-details {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Upcoming Appointments</h1>
+
+    <div class="appointment-card">
+        <div class="appointment-header">
+            <span class="patient-name">Ramesh Das</span>
+            <span class="appointment-date">Today, 10:30 AM</span>
+        </div>
+        <div class="appointment-details">
+            <div class="detail-item">
+                <strong>Doctor</strong>
+                Dr. Smith (General Medicine)
+            </div>
+            <div class="detail-item">
+                <strong>Contact</strong>
+                +91 98765 43210
+            </div>
+            <div class="detail-item">
+                <strong>Status</strong>
+                <span class="status-confirmed">Confirmed</span>
+            </div>
+            <div class="detail-item">
+                <strong>Reason</strong>
+                Follow-up visit
+            </div>
+        </div>
+    </div>
+
+    <div class="appointment-card">
+        <div class="appointment-header">
+            <span class="patient-name">Sunil Yadav</span>
+            <span class="appointment-date">Tomorrow, 2:15 PM</span>
+        </div>
+        <div class="appointment-details">
+            <div class="detail-item">
+                <strong>Doctor</strong>
+                Dr. Johnson (Neurology)
+            </div>
+            <div class="detail-item">
+                <strong>Contact</strong>
+                +91 87654 32109
+            </div>
+            <div class="detail-item">
+                <strong>Status</strong>
+                <span class="status-confirmed">Confirmed</span>
+            </div>
+            <div class="detail-item">
+                <strong>Reason</strong>
+                Headache consultation
+            </div>
+        </div>
+    </div>
+
+    <div class="appointment-card">
+        <div class="appointment-header">
+            <span class="patient-name">Riya Patel</span>
+            <span class="appointment-date">15 Jun 2024, 11:00 AM</span>
+        </div>
+        <div class="appointment-details">
+            <div class="detail-item">
+                <strong>Doctor</strong>
+                Dr. James (Pediatrics)
+            </div>
+            <div class="detail-item">
+                <strong>Contact</strong>
+                +91 76543 21098
+            </div>
+            <div class="detail-item">
+                <strong>Status</strong>
+                <span class="status-pending">Pending</span>
+            </div>
+            <div class="detail-item">
+                <strong>Reason</strong>
+                Child vaccination
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
