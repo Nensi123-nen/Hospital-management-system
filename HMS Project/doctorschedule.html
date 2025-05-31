@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scheduleApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Schedule | Hospital Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #dff6ff, #f0f9ff);
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0f0f5;
+        }
+        h1 {
+            font-size: 32px;
+            color: #0077b6;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #90e0ef;
+            padding-bottom: 10px;
+        }
+        .search-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px 15px 12px 40px;
+            border: 2px solid #00b4d8;
+            border-radius: 12px;
+            font-size: 16px;
+            background-color: #f8fdff;
+            outline: none;
+        }
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #00b4d8;
+        }
+        .filter-select select {
+            padding: 12px 15px;
+            border: 2px solid #00b4d8;
+            border-radius: 12px;
+            font-size: 16px;
+            background-color: #f8fdff;
+            color: #333;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .schedule-table th {
+            background-color: #00b4d8;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        .schedule-table td {
+            padding: 12px 15px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0f0f5;
+        }
+        .schedule-table tr:nth-child(even) td {
+            background-color: #f1faff;
+        }
+        .schedule-table tr:hover td {
+            background-color: #e0f7ff;
+        }
+        .doctor-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .doctor-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #0077b6;
+        }
+        .doctor-name {
+            font-weight: bold;
+            color: #0077b6;
+        }
+        .doctor-specialization {
+            font-size: 13px;
+            color: #555;
+            font-style: italic;
+        }
+        .text-success {
+    color: green;
+    font-weight: bold;
+}
+.text-danger {
+    color: red;
+    font-weight: bold;
+}
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .schedule-table {
+                display: block;
+                overflow-x: auto;
+            }
+            .doctor-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body ng-controller="ScheduleController">
+    <div class="container">
+        <h1>Doctor Schedule</h1>
+        <div class="search-filter">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" ng-model="searchQuery" placeholder="Search by doctor name or specialization...">
+            </div>
+            <div class="filter-select">
+                <select ng-model="selectedSpecialization">
+                    <option value="">All Specializations</option>
+                    <option ng-repeat="spec in specializations" value="{{spec}}">{{spec}}</option>
+                </select>
+            </div>
+        </div>
+        <table class="schedule-table">
+    <thead>
+        <tr>
+            <th>Doctor Name</th>
+            <th>Specialization</th>
+            <th>Day</th>
+            <th>Time Slot</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="doctor in doctors | filter:searchFilter">
+            <td>{{doctor.name}}</td>
+            <td>{{doctor.specialization}}</td>
+            <td>{{doctor.day}}</td>
+            <td>{{doctor.time_slot}}</td>
+            <td>
+                <span ng-class="{'text-success': doctor.status === 'Available', 'text-danger': doctor.status === 'Booked'}">
+                    {{doctor.status}}
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+    </div>
+
+    <script>
+        var app = angular.module('scheduleApp', []);
+        app.controller('ScheduleController', ['$scope', function($scope) {
+            $scope.searchQuery = '';
+            $scope.selectedSpecialization = '';
+            $scope.specializations = [];
+
+            $scope.doctors = [];
+
+            // Fetch schedule data from our PHP API
+            $scope.fetchSchedule = function() {
+                fetch('get_schedule.php')
+                .then(function(response){ 
+                    return response.json();
+                })
+                .then(function(data) {
+                    $scope.doctors = data;
+                    // Collect unique specializations from data to populate filter dropdown
+                    var specs = new Set();
+                    data.forEach(function(doc){
+                        specs.add(doc.specialization);
+                    });
+                    $scope.specializations = Array.from(specs);
+                    $scope.$apply(); // Trigger Angular digest cycle
+                })
+                .catch(function(error){
+                    console.error('Error fetching schedule:', error);
+                });
+            };
+
+            $scope.fetchSchedule();
+
+            $scope.searchFilter = function(doctor) {
+                var searchText = $scope.searchQuery.toLowerCase();
+                var specFilter = $scope.selectedSpecialization;
+                return (
+                    (doctor.name.toLowerCase().includes(searchText) ||
+                    doctor.specialization.toLowerCase().includes(searchText)) &&
+                    (specFilter === '' || doctor.specialization === specFilter)
+                );
+            };
+        }]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://wallpaperaccess.com/full/4113093.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 420px;
+    border: 2px solid rgba(7, 7, 7, 0.2);
+    color: #333;
+    border-radius: 16px;
+    padding: 30px 40px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5); /* Added for better readability */
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%; /* Changed from 90% to 100% */
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(12, 12, 12, 0.2);
+    border-radius: 50px;
+    font-size: 16px;
+    color: #333;
+    padding: 20px 45px 20px 20px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #333; /* Better focus state */
+}
+
+.input-box input::placeholder {
+    color: #333;
+    opacity: 0.7;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%; /* Changed from 30% to center vertically */
+    transform: translateY(-50%); /* Adjusted to vertical centering */
+    font-size: 20px;
+    pointer-events: none; /* Prevents icon from blocking input */
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    margin: 20px;
+    gap: 20px; /* Better than word-spacing for this purpose */
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.wrapper .btn:hover {
+    background: #f0f0f0;
+}
+
+.wrapper .register-link { /* Fixed typo in class name */
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}

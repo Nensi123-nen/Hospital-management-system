@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="doctorApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Details | Hospital Management System</title>
+    <link rel="stylesheet" href="docpageDe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="DoctorController">
+
+    <!-- Search Bar -->
+    <div class="container">
+        <div class="searchbar">
+            <input id="search-here" ng-model="searchQuery" placeholder="Find Doctor by Name / Specialization...">
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doctor Details -->
+    <div class="doctors">
+        <div class="box" ng-repeat="doctor in doctors | filter:searchQuery">
+            <div class="box-content">
+                <a href="#">
+                    <div class="image" ng-style="{'background-image': 'url(' + doctor.image + ')'}"></div>
+                </a>
+                <div>
+                    <p><span>{{ doctor.name }}</span></p>
+                    <p id="second">{{ doctor.specialization }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AngularJS Script -->
+    <script>
+        var app = angular.module('doctorApp', []);
+        app.controller('DoctorController', ['$scope', '$http', function($scope, $http) {
+            $scope.searchQuery = '';
+            $scope.doctors = [];
+
+            $http.get('get_doctors.php').then(function(response) {
+                $scope.doctors = response.data.map(function(doctor) {
+                    // Map images manually using doctor.id
+                    switch (doctor.id) {
+                        case "20": doctor.image = 'img1.jpg'; break;
+                        case "21": doctor.image = 'img2.jpg'; break;
+                        case "22": doctor.image = 'img3.jpg'; break;
+                        case "23": doctor.image = 'img4.jpg'; break;
+                        case "24": doctor.image = 'img5.jpg'; break;
+                        case "25": doctor.image = 'img6.jpg'; break;
+                        case "26": doctor.image = 'img7.jpg'; break;
+                        case "29": doctor.image = 'img10.avif'; break;
+                        case "28": doctor.image = 'img9.avif'; break;
+                        case "14": doctor.image = 'img2.jpg'; break;
+                        case "27": doctor.image = 'img11.avif'; break;
+                        case "16": doctor.image = 'img4.jpg'; break;
+                        case "17": doctor.image = 'img5.jpg'; break;
+                        case "18": doctor.image = 'img6.jpg'; break;
+                        case "19": doctor.image = 'img7.jpg'; break;
+                        default:  doctor.image = 'default.jpg'; // fallback
+                    }
+                    return doctor;
+                });
+            }, function(error) {
+                console.error('Error fetching doctor data:', error);
+            });
+        }]);
+    </script>
+
+</body>
+</html>

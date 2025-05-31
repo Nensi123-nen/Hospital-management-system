@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Hospital Management System</title>
+    <link rel="stylesheet" href="cont.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <i class="fas fa-hospital"></i> Hospital Management System
+        </div>
+        <nav class="top-nav">
+            <a href="home page.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, concerns, or need assistance, feel free to contact us using the information below. Our hospital staff is here to help you 24/7.</p>
+
+        <h2>General Contact Information</h2>
+        <p>
+            <strong>Phone:</strong> +1 (123) 456-7890 <br>
+            <strong>Email:</strong> info@hospitalmanagement.com <br>
+            <strong>Address:</strong> 123 Health Lane, Medic City, TX 54321, USA
+        </p>
+
+        <h2>Emergency Contacts</h2>
+        <p>
+            <strong>Emergency Hotline:</strong> +1 (800) 911-1234 <br>
+            <strong>Ambulance Service:</strong> +1 (123) 555-9876
+        </p>
+
+        <h2>Departments</h2>
+        <p>
+            <strong>Appointments & Scheduling:</strong> appointments@hospitalmanagement.com <br>
+            <strong>Billing Department:</strong> billing@hospitalmanagement.com <br>
+            <strong>Human Resources:</strong> hr@hospitalmanagement.com
+        </p>
+
+        <h2>Working Hours</h2>
+        <p>
+            <strong>General Inquiries:</strong> Monday - Friday: 9 AM to 6 PM <br>
+            <strong>Emergency Services:</strong> Available 24/7
+        </p>
+
+        <h2>Location Map</h2>
+        <p>Visit us at the hospital or use the map below to find directions to our location:</p>
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <h2>Contact Form</h2>
+        <p>Alternatively, you can fill out the form below, and we will get back to you as soon as possible:</p>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://img.freepik.com/premium-photo/hospital-interior-blurred-background_113954-3726.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    header {
+      background-color: #007bb5;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+
+    .left-header {
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .left-header i {
+      margin-right: 10px;
+    }
+
+    .right-header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .right-header a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .right-header button {
+      background-color: white;
+      color: #007bb5;
+      border: none;
+      padding: 8px 16px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 20px 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .info h1 {
+      font-size: 36px;
+      margin-bottom: 25px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .info p {
+      font-size: 20px;
+      margin-bottom: 35px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .features {
+      margin-top: 50px;
+    }
+
+    .features h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .features h3 {
+      font-size: 24px;
+      margin-top: 35px;
+      margin-bottom: 20px;
+      color: transparent;
+      background: linear-gradient(to right, #00eaff, #00c2ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .features h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #00eaff;
+      transition: width 0.4s ease;
+    }
+
+    .features h3:hover::after {
+      width: 100%;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .feature-list li {
+      margin-bottom: 12px;
+    }
+
+    .feature-list a {
+      color: #fafcfc;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .feature-list a:hover {
+      color: #6beded;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .info h1 {
+        font-size: 28px;
+      }
+
+      .info p {
+        font-size: 18px;
+      }
+
+      .features h1 {
+        font-size: 22px;
+      }
+
+      .features h3 {
+        font-size: 20px;
+      }
+
+      .feature-list a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left-header">
+      <i class="fas fa-hospital"></i> Hospital Management System
+    </div>
+    <nav class="right-header">
+      <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+      <button onclick="window.location.href='login.php'">Sign Up / Registration</button>
+    </nav>
+  </header>
+
+  <div class="content-wrapper">
+    <div class="info">
+      <h1>Welcome to our Hospital Management System</h1>
+      <p>We provide High-Quality healthcare services to ensure the well-being of our community.</p>
+    </div>
+
+    <div class="features">
+      <h1>Features We Are Offering</h1>
+
+      <h3>Appointments</h3>
+      <ul class="feature-list">
+        <li><a href="login.php">View Appointment</a></li>
+        <li><a href="login.php">Book Appointment</a></li>
+      </ul>
+
+      <h3>Doctors Info</h3>
+      <ul class="feature-list">
+        <li><a href="login.php">Search Doctors</a></li>
+        <li><a href="login.php">View Doctors-Schedule</a></li>
+      </ul>
+
+      <h3>Patient Activities</h3>
+      <ul class="feature-list">
+        <li><a href="login.php">View Medical-Records</a></li>
+        <li><a href="login.php">Patient-Checkins</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

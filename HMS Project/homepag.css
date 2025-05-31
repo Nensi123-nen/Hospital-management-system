@@ -1,0 +1,521 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #0288d1; /* Hospital blue */
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .left-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+header i {
+    margin-right: 10px;
+}
+
+.top-nav {
+    margin-right: 20px;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bb5;
+    padding: 15px 30px;
+    color: white;
+    position: relative;
+}
+
+.left-header {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.user-circle {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    color: #007bb5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+}
+
+.user-circle:hover {
+    background-color: #e0f0ff;
+}
+
+.welcome-popup {
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background-color: white;
+    color: #007bb5;
+    padding: 8px 15px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    font-weight: 500;
+    z-index: 1;
+}
+
+/* Main container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.container h1, .container h2 {
+    color: #0288d1;
+    font-size: xx-large;
+}
+
+.container p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Form styling */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0277bd;
+}
+
+/* Google map iframe styling */
+iframe {
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-nav a {
+        margin: 10px 0;
+        display: block;
+    }
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bb5; /* Hospital Blue */
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .left-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+header i {
+    margin-right: 10px;
+}
+
+.top-nav {
+    margin-right: 20px;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.container h1 {
+    color: #007bb5;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    color: #007bb5;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Links */
+a {
+    color: #007bb5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <!-- Include Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="homepag.css"> <!-- Linking external CSS -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        
+        <div class="left-header">
+        <i class="fas fa-hospital"></i> Hospital Management System
+        </div>
+
+        <nav class="right-header">
+            <a href="about.html"><i class="fas fa-info-circle"></i>About Us</a>
+            <a href="contact.html"><i class="fas fa-envelope"…
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bb5;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.left-header i {
+    margin-right: 10px;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+}
+
+.right-header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.right-header button {
+    background-color: white;
+    color: #007bb5;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right-header button:hover {
+    background-color: #f0f2f5;
+}
+
+/* Full Image */
+.full-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Info Section */
+.info {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.info h1 {
+    color: #007bb5;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.info p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Navigation Section */
+nav {
+    text-align: center;
+    margin: 30px 0;
+    background-color: #007bb5;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    color: #007bb5;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.section .card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.section .card h3 {
+    color: #007bb5;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.section .card a {
+    display: inline-block;
+    background-color: #007bb5;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.section .card a:hover {
+    background-color: #005f86;
+}
+
+/* Feature Section Styling */
+.features {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.features p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bb5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features h3 {
+    font-size: 20px;
+    color: #007bb5;
+    margin-top: 20px;
+}
+
+.feature-list {
+    list-style-type: disc;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+}
+
+.feature-list a {
+    color: #007bb5;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.feature-list a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .section .card h3 {
+        font-size: 20px;
+    }
+}

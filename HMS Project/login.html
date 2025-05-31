@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<center>
+    <div class="wrapper">
+        <form action="login.php" method="post">
+            <h1>Login</h1>
+            
+            <!-- Error message display -->
+          
+            
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username" required size="150">
+                <i class='bx bx-user'></i>
+            </div>
+            
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required size="150">
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            
+            <div class="user-type">
+                <label><input type="radio" name="user_type" value="doctor" required> Doctor</label>
+                <label><input type="radio" name="user_type" value="patient" required> Patient</label>
+            </div>
+            
+            <button type="submit" class="btn">Login</button><br>
+            
+            <div class="register-link">
+                <p>Create New Account?<br><br>
+                    <a href="submit_registration.php">Register as Patient</a><br>
+                    <a href="doctor_registration.php">Register as Doctor</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</center>
+</body>
+</html>

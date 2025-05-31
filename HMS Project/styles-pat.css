@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: url(https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg) no-repeat ;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.registration-form {
+    width: 420px;
+    border: 2px solid rgba(15, 15, 15, 0.918);
+    color: #333;
+    border-radius: 16px;
+    padding: 30px 40px;
+    backdrop-filter: blur(10px);
+    color: #333;
+}
+
+.registration-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.registration-form label {
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.registration-form ::placeholder{
+    color: #333;
+}
+
+.registration-form .birth-date{
+    color: #333;
+}
+
+.registration-form input, .registration-form select, .registration-form textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: transparent;
+    color: #333;
+}
+
+.registration-form input::placeholder{
+    color: #333;
+}
+.registration-form select{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #333;
+}
+
+.registration-form select option{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+}
+
+.registration-form textarea{
+    resize: vertical;
+}
+
+.registration-form button {
+    display: flex;
+    justify-items: right;
+    width: 48%;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 4%;
+}
+
+.registration-form button[type="submit"] {
+    background-color: #007bff;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.registration-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.registration-form button[type="reset"] {
+    background-color: #007bff;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.registration-form button[type="reset"]:hover {
+    background-color: #0056b3;
+
+}
+
+.registration-form .submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#passwordError{
+    display: none;
+    color: red;
+}
